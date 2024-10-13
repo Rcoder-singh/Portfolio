@@ -102,13 +102,13 @@ export const BtnList = [
   },
   {
     label: "LinkedIn",
-    link: "https://www.linkedin.com/in/codebucks",
+    link: "https://www.linkedin.com/in/rishabh-singh22/",
     icon: "linkedin",
     newTab: true,
   },
   {
     label: "X",
-    link: "https://www.x.com/code_bucks",
+    link: "https://www.x.com/Rishabh19005463",
     icon: "twitter",
     newTab: true,
   },
