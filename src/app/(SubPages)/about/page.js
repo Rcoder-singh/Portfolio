@@ -1,11 +1,8 @@
 import Image from "next/image";
-import bg from "../../../../public/background/about-background.png";
-import ProjectsList from "@/components/projects";
-import { projectsData } from "../../data";
-import RenderModel from "@/components/RenderModel";
-import Staff from "@/components/models/Staff";
-import HatModel from "@/components/models/HatModel";
 import AboutDetails from "@/components/about";
+import RenderModel from "@/components/RenderModel";
+import HatModel from "@/components/models/HatModel";
+import bg from "../../../../public/background/about-background.png";
 
 export default function About() {
   return (
@@ -26,12 +23,12 @@ export default function About() {
           <h1 className="font-bold  text-6xl xs:text-7xl sm:text-8xl  lg:text-9xl text-accent">
             Rishabh Singh
           </h1>
-          <p className="font-light text-foreground text-lg">
-            Meet the wizard behind this portfolio
+          <p className="font-light text-foreground text-xl mt-5">
+            Meet the wizard behind this portfolio.
           </p>
         </div>
       </div>
-      <AboutDetails/>
+      <AboutDetails />
     </>
   );
 }
