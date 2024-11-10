@@ -6,7 +6,7 @@ const ProjectLayout = ({ name, description, date, demoLink }) => {
     <Link
       href={demoLink}
       target="_blank"
-      className="flex items-center justify-between w-full relative rounded-lg overflow-hidden p-6 custom-bg"
+      className="text-sm md:text-base flex items-center justify-between w-full relative rounded-lg overflow-hidden p-4 md:p-6 custom-bg"
     >
       {" "}
       <div className="flex items-center justify-center space-x-2">
