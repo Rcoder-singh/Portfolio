@@ -1,7 +1,20 @@
 "use client";
+import { motion } from "framer-motion";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "sonner";
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren:0.2
+    },
+  },
+};
+
+const item = { hidden: { scale: 0 }, show: { scale: 1 } };
 
 const Form = () => {
   const {
@@ -36,18 +49,22 @@ const Form = () => {
       reply_to: data.email,
       message: data.message,
     };
-    
+
     sendEmail(templateParams);
   };
 
   return (
     <>
       <Toaster richColors={true} />
-      <form
+      <motion.form
+        variants={container}
+        initial="hidden"
+        animate="show"
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-md w-full flex flex-col items-center justify-center space-y-4"
       >
-        <input
+        <motion.input
+          variants={item}
           type="text"
           placeholder="Name"
           {...register("name", {
@@ -64,7 +81,8 @@ const Form = () => {
             {errors.name.message}
           </span>
         )}
-        <input
+        <motion.input
+          variants={item}
           type="email"
           placeholder="Email"
           {...register("email", { required: "This field is required!" })}
@@ -75,7 +93,8 @@ const Form = () => {
             {errors.email.message}
           </span>
         )}
-        <textarea
+        <motion.textarea
+        variants={item}
           placeholder="Message"
           {...register("message", {
             required: "This field is required!",
@@ -95,13 +114,14 @@ const Form = () => {
             {errors.message.message}
           </span>
         )}
-        <input
+        <motion.input
+          variants={item}
           value="Cast your message!"
           className="px-10 py-4 rounded-md shadow-lg bg-background border border-accent/30 border-solid
       hover:shadow-glass-sm backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 cursor-pointer capitalize"
           type="submit"
         />
-      </form>
+      </motion.form>
     </>
   );
 };
