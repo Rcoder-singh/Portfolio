@@ -9,7 +9,7 @@ const container = {
     opacity: 1,
     transition: {
       staggerChildren: 0.3,
-      delayChildren:0.2
+      delayChildren: 0.2,
     },
   },
 };
@@ -94,7 +94,7 @@ const Form = () => {
           </span>
         )}
         <motion.textarea
-        variants={item}
+          variants={item}
           placeholder="Message"
           {...register("message", {
             required: "This field is required!",
